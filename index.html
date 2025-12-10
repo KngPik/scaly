@@ -8,30 +8,51 @@
 </head>
 <body>
     
-    <header></header>
+    <header>
+        <h1>Scaly</h1>
+    </header>
 
     <main>
-        <label for="value">Value:</label>
-        <input type="number" name="value" id="value" onchange="calculateOutput()">
-        <select name="value-unit" id="value-unit" onchange="calculateOutput()">
-            <option value="1">mm</option>
-            <option value="10">cm</option>
-            <option value="1000">m</option>
-            <option value="1000000">km</option>
-        </select>
-
-        <label for="scale">Scale:</label>
-        <div>1 : </div>
-        <input type="number" name="scale" id="scale" value="1" onchange="calculateOutput()">
-
-        <label for="output">Scaled Value:</label>
-        <input type="number" name="output" id="output">
-        <select name="output-unit" id="output-unit" onchange="calculateOutput()">
-            <option value="1">mm</option>
-            <option value="10">cm</option>
-            <option value="1000">m</option>
-            <option value="1000000">km</option>
-        </select>
+        <div class="main-row">
+            <label for="value">Value:</label>
+            <input type="number" name="value" id="value" placeholder="100" onchange="calculateOutput()">
+            <!-- <select name="value-unit" id="value-unit" onchange="calculateOutput()">
+                <option value="1">mm</option>
+                <option value="10">cm</option>
+                <option value="1000">m</option>
+                <option value="1000000">km</option>
+            </select> -->
+            <div class="custom-select" id="value-unit">
+                <div class="custom-select-option" id="cso-v-1" onclick="changeUnitSelection(this.id)">mm</div>
+                <div class="custom-select-option" id="cso-v-2" onclick="changeUnitSelection(this.id)">cm</div>
+                <div class="custom-select-option selected" id="cso-v-3" onclick="changeUnitSelection(this.id)">m</div>
+                <div class="custom-select-option" id="cso-v-4" onclick="changeUnitSelection(this.id)">km</div>
+            </div>
+        </div>
+        
+        <div class="main-row">
+            <label for="scale">Scale:</label>
+            <div>1 : </div>
+            <input type="number" name="scale" id="scale" value="1" onchange="calculateOutput()">
+        </div>
+        
+        <div class="main-row">
+            <label for="output">Scaled Value:</label>
+            <input type="number" name="output" id="output">
+            <!-- <select name="output-unit" id="output-unit" onchange="calculateOutput()">
+                <option value="1">mm</option>
+                <option value="10">cm</option>
+                <option value="1000">m</option>
+                <option value="1000000">km</option>
+            </select> -->
+            <div class="custom-select" id="output-unit">
+                <div class="custom-select-option" id="cso-o-1" onclick="changeUnitSelection(this.id)">mm</div>
+                <div class="custom-select-option" id="cso-o-1" onclick="changeUnitSelection(this.id)">cm</div>
+                <div class="custom-select-option selected" id="cso-o-1" onclick="changeUnitSelection(this.id)">m</div>
+                <div class="custom-select-option" id="cso-o-1" onclick="changeUnitSelection(this.id)">km</div>
+            </div>
+        </div>
+        
     </main>
 
     <footer></footer>
