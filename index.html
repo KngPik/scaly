@@ -10,7 +10,29 @@
     
     <header></header>
 
-    <main></main>
+    <main>
+        <label for="value">Value:</label>
+        <input type="number" name="value" id="value" onchange="calculateOutput()">
+        <select name="value-unit" id="value-unit" onchange="calculateOutput()">
+            <option value="1">mm</option>
+            <option value="10">cm</option>
+            <option value="1000">m</option>
+            <option value="1000000">km</option>
+        </select>
+
+        <label for="scale">Scale:</label>
+        <div>1 : </div>
+        <input type="number" name="scale" id="scale" value="1" onchange="calculateOutput()">
+
+        <label for="output">Scaled Value:</label>
+        <input type="number" name="output" id="output">
+        <select name="output-unit" id="output-unit" onchange="calculateOutput()">
+            <option value="1">mm</option>
+            <option value="10">cm</option>
+            <option value="1000">m</option>
+            <option value="1000000">km</option>
+        </select>
+    </main>
 
     <footer></footer>
 
