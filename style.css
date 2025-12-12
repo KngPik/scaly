@@ -39,19 +39,45 @@ main {
         flex-direction: row;
 
         & input[type="number"] {
+            
             border: 0;
             background-color: transparent;
+
         }
 
         & .custom-select {
 
+            display: flex;
+
             & .custom-select-option {
+
+                padding: 10px 20px;
+                min-width: 50px;
+                background-color: rgb(37, 41, 67);
 
             }
 
             & .selected {
 
-                background-color: red;
+                background-color: rgb(61, 67, 108);
+
+            }
+
+            & :nth-child(1) {
+
+                border-radius: 15px 0px 0px 15px;
+
+            }
+
+            & :nth-child(4) {
+
+                border-radius: 0px 15px 15px 0px;
+
+            }
+
+            & :hover {
+
+                background-color: rgb(53, 58, 93);
 
             }
 
