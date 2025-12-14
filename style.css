@@ -3,8 +3,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
+    font-family: "Google Sans Flex", Arial, Helvetica, sans-serif;
+    color: black;
+    font-weight: 400;
+    font-size: 1.1rem;
 
 }
 
@@ -13,7 +15,27 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(50, 47, 70);
+    background-color: white;
+
+}
+
+h1,i {
+
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+}
+
+h2 {
+
+    font-size: 1.8rem;
+
+}
+
+h3 {
+
+    font-size: 1.4rem;
 
 }
 
@@ -24,7 +46,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(34, 32, 47);
+    margin-bottom: 40px;
 
 }
 
@@ -32,34 +54,85 @@ main {
 
     display: flex;
     flex-direction: column;
+    gap: 25px;
 
     & .main-row {
 
         display: flex;
         flex-direction: row;
+        align-items: center;
 
-        & input[type="number"] {
+        & label {
+
+            margin-right: 15px;
+            min-width: 150px;
+            font-weight: 500;
+
+        }
+
+        & input[type="number"], input[type="text"] {
             
+            width: 120px;
             border: 0;
-            background-color: transparent;
+            border-radius: 20px;
+            background-color: lightgray;
+            padding: 10px 20px;
+            margin: 0;
+            font-weight: 400;
+
+            & ::selection {
+
+                border: 0;
+
+            }
+
+        }
+
+        & #scale-container {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: lightgray;
+            border-radius: 20px;
+            width: 120px;
+            padding: 0px 20px;
+
+            & div {
+
+                font-weight: 400;
+
+            }
+
+            & #scale {
+
+                background-color: transparent;
+                padding-left: 4px;
+                width: 60px;
+
+            }
 
         }
 
         & .custom-select {
 
             display: flex;
+            margin-left: 15px;
 
             & .custom-select-option {
 
                 padding: 10px 20px;
                 min-width: 50px;
-                background-color: rgb(37, 41, 67);
+                background-color: lightgray;
+                font-weight: 300;
+                letter-spacing: 2px;
 
             }
 
             & .selected {
 
-                background-color: rgb(61, 67, 108);
+                background-color: rgb(70, 70, 70);
+                color: white;
 
             }
 
@@ -77,7 +150,8 @@ main {
 
             & :hover {
 
-                background-color: rgb(53, 58, 93);
+                background-color: gray;
+                color: white;
 
             }
 
@@ -88,5 +162,7 @@ main {
 }
 
 footer {
+
+    margin-top: 40px;
 
 }

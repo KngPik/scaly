@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scaly</title>
@@ -9,13 +12,13 @@
 <body>
     
     <header>
-        <h1>Scaly</h1>
+        <h1>Scal<i>y</i></h1>
     </header>
 
     <main>
         <div class="main-row">
-            <label for="value">Value:</label>
-            <input type="number" name="value" id="value" placeholder="100" onchange="calculateOutput()">
+            <label for="value">Input</label>
+            <input type="text" name="value" id="value" value="100" onchange="calculateOutput()">
             <div class="custom-select" id="value-unit">
                 <div class="custom-select-option" id="cso-v-1" onclick="changeValueUnitSelection(this.id)">mm</div>
                 <div class="custom-select-option selected" id="cso-v-2" onclick="changeValueUnitSelection(this.id)">cm</div>
@@ -25,14 +28,16 @@
         </div>
         
         <div class="main-row">
-            <label for="scale">Scale:</label>
-            <div>1 : </div>
-            <input type="number" name="scale" id="scale" value="500" onchange="calculateOutput()">
+            <label for="scale">Scale</label>
+            <div id="scale-container">
+                <div>1 : </div>
+                <input type="text" name="scale" id="scale" value="500" onchange="calculateOutput()">
+            </div>
         </div>
         
         <div class="main-row">
-            <label for="output">Scaled Value:</label>
-            <input type="number" name="output" id="output">
+            <label for="output">Scaled Output</label>
+            <input type="text" name="output" id="output">
             <div class="custom-select" id="output-unit">
                 <div class="custom-select-option" id="cso-o-1" onclick="changeOutputUnitSelection(this.id)">mm</div>
                 <div class="custom-select-option" id="cso-o-2" onclick="changeOutputUnitSelection(this.id)">cm</div>

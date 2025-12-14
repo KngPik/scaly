@@ -1,11 +1,13 @@
 class UnitOptionElement {
 
-    htmlElement;
+    id;
+    htmlElement = null;
     unitAsString;
     isSelected = false;
 
-    UnitElement(htmlElement, unitAsString, isSelected) {
+    constructor(id, htmlElement, unitAsString, isSelected) {
 
+        this.id = id;
         this.htmlElement = htmlElement;
         this.unitAsString = unitAsString;
         this.isSelected = isSelected;
@@ -22,6 +24,12 @@ class UnitOptionElement {
     changeSelectionStatus(newStatus) {
 
         this.isSelected = newStatus;
+
+        if (this.isSelected) {
+            this.htmlElement.classList.add("selected");
+        } else {
+            this.htmlElement.classList.remove("selected");
+        }
     }
 
 }
@@ -36,17 +44,19 @@ function initElements() {
 
     for (let i = 1; i < 5; i++) {
 
-        var htmlElement = document.getElementById("cso-v-" + i.toString());
-        var isSelected = htmlElement.classList.contains("selected");
-        var newValueUnitOptionElement = UnitOptionElement(htmlElement, htmlElement.innerHTML, isSelected);
+        let id = "cso-v-" + i.toString();
+        let htmlElement = document.getElementById(id);
+        let isSelected = htmlElement.classList.contains("selected");
+        let newValueUnitOptionElement = new UnitOptionElement(id, htmlElement, htmlElement.innerHTML, isSelected);
         valueUnitOptionElements.push(newValueUnitOptionElement);
     }
 
     for (let i = 1; i < 5; i++) {
 
-        var htmlElement = document.getElementById("cso-o-" + i.toString());
-        var isSelected = htmlElement.classList.contains("selected");
-        var newOutputUnitOptionElement = UnitOptionElement(htmlElement, htmlElement.innerHTML, isSelected);
+        let id = "cso-o-" + i.toString();
+        let htmlElement = document.getElementById(id);
+        let isSelected = htmlElement.classList.contains("selected");
+        let newOutputUnitOptionElement = new UnitOptionElement(id, htmlElement, htmlElement.innerHTML, isSelected);
         outputUnitOptionElements.push(newOutputUnitOptionElement);
     }
 
@@ -70,10 +80,12 @@ function calculateOutput() {
 function changeValueUnitSelection(id) {
 
     valueUnitOptionElements.forEach(e => {
-        e.classList.remove("selected");
-    });
+        e.changeSelectionStatus(false);
+        if (e.id == id) {
 
-    document.getElementById(id).classList.add("selected");
+            e.changeSelectionStatus(true);
+        }
+    });
 
     getUnits();
 }
@@ -81,10 +93,12 @@ function changeValueUnitSelection(id) {
 function changeOutputUnitSelection(id) {
 
     outputUnitOptionElements.forEach(e => {
-        e.classList.remove("selected");
-    });
+        e.changeSelectionStatus(false);
+        if (e.id == id) {
 
-    document.getElementById(id).classList.add("selected");
+            e.changeSelectionStatus(true);
+        }
+    });
 
     getUnits();
 }
